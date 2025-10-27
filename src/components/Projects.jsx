@@ -1,5 +1,6 @@
 import React from 'react';
 import { ExternalLink, Github } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const projects = [
   {
@@ -36,9 +37,15 @@ const projects = [
   },
 ];
 
-function ProjectCard({ title, desc, role, tags, repo }) {
+function ProjectCard({ title, desc, role, tags, repo, index }) {
   return (
-    <div className="group relative flex flex-col rounded-xl border border-white/10 bg-white/5 p-5 text-white backdrop-blur transition hover:border-white/20">
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5, delay: 0.05 * index, ease: 'easeOut' }}
+      className="group relative flex flex-col rounded-xl border border-white/10 bg-white/5 p-5 text-white backdrop-blur transition hover:border-white/20"
+    >
       <div className="mb-3 flex items-center justify-between gap-3">
         <h3 className="text-lg font-semibold">{title}</h3>
         <div className="flex items-center gap-2">
@@ -78,7 +85,7 @@ function ProjectCard({ title, desc, role, tags, repo }) {
           </span>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -101,8 +108,8 @@ export default function Projects() {
       </div>
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-        {projects.map((p) => (
-          <ProjectCard key={p.title} {...p} />
+        {projects.map((p, i) => (
+          <ProjectCard key={p.title} index={i} {...p} />
         ))}
       </div>
     </section>

@@ -4,6 +4,7 @@ import Projects from './components/Projects';
 import Education from './components/Education';
 import Links from './components/Links';
 import BackgroundFX from './components/BackgroundFX';
+import ScrollProgress from './components/ScrollProgress';
 
 export default function App() {
   useEffect(() => {
@@ -27,6 +28,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-950 antialiased">
       <BackgroundFX />
+      <ScrollProgress />
 
       <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-slate-950/70 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3 text-white">

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function BackgroundFX() {
   return (
-    <div className="pointer-events-none fixed inset-0 -z-[1]">
+    <div className="pointer-events-none fixed inset-0 z-0">
       {/* Subtle grid pattern using CSS gradients */}
       <div
         aria-hidden
