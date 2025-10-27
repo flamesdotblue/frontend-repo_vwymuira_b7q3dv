@@ -1,6 +1,6 @@
 import React from 'react';
 import Spline from '@splinetool/react-spline';
-import { Rocket, Code } from 'lucide-react';
+import { Rocket, Code, User } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function Hero() {
@@ -27,6 +27,21 @@ export default function Hero() {
           <Rocket className="h-4 w-4 text-emerald-400" />
           <span className="text-xs uppercase tracking-widest text-emerald-300/90">Portfolio</span>
         </div>
+
+        {/* Photo placeholder */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="relative"
+        >
+          <div className="relative h-28 w-28 overflow-hidden rounded-full border border-white/10 bg-white/5 p-1 shadow-lg backdrop-blur sm:h-36 sm:w-36">
+            <div className="flex h-full w-full items-center justify-center rounded-full bg-slate-900/60">
+              <User className="h-12 w-12 text-slate-400 sm:h-16 sm:w-16" />
+            </div>
+          </div>
+          <div className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-white/10" />
+        </motion.div>
 
         <h1 className="text-center text-4xl font-semibold leading-tight md:text-6xl">
           Passionate Developer crafting functional, user‑friendly, modern products
