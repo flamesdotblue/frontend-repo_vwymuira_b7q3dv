@@ -4,17 +4,17 @@ import { Rocket, Code } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[75vh] overflow-hidden bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white">
-      {/* 3D Scene */}
+    <section className="relative w-full min-h-[78vh] overflow-hidden bg-slate-950 text-white">
+      {/* Full-width Spline cover */}
       <div className="absolute inset-0">
         <Spline
-          scene="https://prod.spline.design/VJLoxp84lCdVfdZu/scene.splinecode"
+          scene="https://prod.spline.design/zhZFnwyOYLgqlLWk/scene.splinecode"
           style={{ width: '100%', height: '100%' }}
         />
       </div>
 
-      {/* Soft gradient overlay for readability (doesn't block scene) */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/40 to-slate-950/80" />
+      {/* Gradient veil to keep text legible without blocking interactions */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/30 to-slate-950/80" />
 
       {/* Content */}
       <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 py-24 md:py-32">
